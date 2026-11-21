@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 28" role="img" aria-label="Testto Pay">
+  <g transform="skewX(-9) translate(4 0)">
+    <rect x="2" y="8" width="7" height="20" rx="1.5" fill="#32D583"/>
+    <rect x="12" y="0" width="7" height="28" rx="1.5" fill="#ECEEF2"/>
+    <rect x="22" y="8" width="7" height="20" rx="1.5" fill="#32D583"/>
+    <rect x="32" y="0" width="7" height="9" rx="1.5" fill="#ECEEF2"/>
+  </g>
+</svg>

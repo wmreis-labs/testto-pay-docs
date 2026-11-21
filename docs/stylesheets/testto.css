@@ -1,0 +1,19 @@
+/* Tokens Testto (design system v1) com o verde do Testto Pay. */
+:root, [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #15171C;
+  --md-primary-fg-color--light: #2A2D35;
+  --md-primary-fg-color--dark: #0E1014;
+  --md-accent-fg-color: #12B76A;
+  --md-typeset-a-color: #0E8A51;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #161920;
+  --md-primary-fg-color--light: #1B1F27;
+  --md-primary-fg-color--dark: #0E1014;
+  --md-accent-fg-color: #32D583;
+  --md-typeset-a-color: #32D583;
+  --md-default-bg-color: #0E1014;
+}
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-header__title { font-family: "Space Grotesk", Inter, sans-serif; letter-spacing: -0.01em; }
+.tp-swatch { display: inline-block; width: 1.1em; height: 1.1em; border-radius: 4px; vertical-align: -0.2em; border: 1px solid rgba(0,0,0,.12); margin-right: .35em; }
+.tp-pill { display: inline-block; font-size: .72rem; padding: .1em .7em; border-radius: 999px; }

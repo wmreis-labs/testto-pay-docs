@@ -15,9 +15,8 @@ Esta é a primeira versão do console. Ela mostra só o que o serviço já guard
 
 - **Conciliação, repasses e taxas.** Dependem do extrato EDI do PagBank (airtestto #282) e ganham um desenho próprio.
 - **Gerar um link avulso pelo console**, sem reserva nem pedido. Fica para depois desta versão; ver "Perguntas em aberto".
-- **Gestão de usuários, empresa, conta do provedor e chaves de API.** Por enquanto, os usuários são criados no pool pela WMReis.
+- **Gestão de usuários, empresa, conta do provedor e chaves de API.** Por enquanto, o operador da WMReis dá acesso aos usuários das empresas pela tela de Identidade do admin (airtestto #363).
 - **Operador da WMReis vendo várias empresas.** Ele entra pelo pool de operadores, que não faz parte deste console.
-- **Endereço público e hospedagem do console.** Nesta versão ele roda local, contra a API de dev.
 
 ## Onde entra
 
@@ -129,8 +128,16 @@ Todas as telas funcionam a 375px sem rolagem horizontal e têm modo escuro.
 
 As rotas de leitura e o pool são as tarefas airtestto #341 e #342. O contrato das rotas entra na seção Contrato do [desenho do serviço](https://wmreis-labs.github.io/airtestto-docs/mudancas/design/2026-11-21-pagamentos-testto-pay/) junto com a #342. A tela mostra o que a API devolve e não recalcula estado: uma cobrança aguardando e fora do prazo já vem como expirada.
 
+## Onde roda
+
+| Ambiente | Endereço | Branch | API |
+| --- | --- | --- | --- |
+| dev | `https://dev-pay.testto.com.br` | `develop` | `https://dev-api.testto.com.br/payments` |
+| prod | `https://pay.testto.com.br` | `main` | `https://api.testto.com.br/payments` |
+
+Cada ambiente é um app do Amplify Hosting na conta AWS do ambiente. Um push na branch publica o console depois de lint, testes e build. O pool do Testto Pay de cada ambiente aceita o endereço do console. Os detalhes de operação estão no README do repositório `testto-pay`.
+
 ## Perguntas em aberto
 
 - **Link avulso pelo console:** o financeiro quer cobrar algo sem reserva nem pedido (sinal, multa, extra)? Se sim, o valor sai do console, e essa é a única exceção à regra "o valor vem do backend que vende". A decisão vai para o ADR antes da tela.
-- **Endereço do console** (por exemplo `pay.testto.com.br`) e hospedagem.
 - **Mês de referência:** o financeiro prefere ver por mês de criação ou por mês de pagamento? Nesta versão é por criação, porque é o índice que existe. Por pagamento entra com a conciliação.
